@@ -6,4 +6,7 @@ menuButton.addEventListener("click", (event) => {
 
     navigation.classList.toggle("show");
     menuButton.classList.toggle("show");
+
+    const isOpen = navigation.classList.contains("show");
+    menuButton.setAttribute("aria-expanded", isOpen);
 });
