@@ -66,17 +66,17 @@ const temples = [
     imageUrl: "https://www.churchofjesuschrist.org/imgs/3b515c363a8c71994bd6e110cf021fc84d9c90f6/full/500%2C/0/default"
   },
   {
-    templeName: "Laie Hawaii",
-    location: "Laie, Hawaii, United States",
-    dedicated: "1919, November, 27",
-    area: 42100,
-    imageUrl: "https://www.churchofjesuschrist.org/imgs/809f567ccf240d2f1c8e457e8c81fbd94ef96759/full/500%2C/0/default"
+    templeName: "Urdaneta Philippines",
+    location: "Urdaneta City, Philippines",
+    dedicated: "2024, April, 28",
+    area: 32604,
+    imageUrl: "https://www.churchofjesuschrist.org/imgs/46910789b4c911eeaf5feeeeac1ed77e9a30ef3f/full/500%2C/0/default"
   }
 ];
 
 const gallery = document.querySelector("#temple-gallery");
 const navigation = document.querySelector("#temple-navigation");
-const menuButton = document.querySelector("#menu-button");
+const menuButton = document.querySelector("#menu");
 const navigationLinks = document.querySelectorAll("nav a[data-filter]");
 
 // Extract the year directly instead of relying on browser-specific date parsing.
@@ -107,7 +107,7 @@ function createTempleCards(templeList) {
   templeList.forEach(temple => {
     const card = document.createElement("section");
     card.className = "temple-card";
-    const name = document.createElement("h2");
+    const name = document.createElement("h3");
     name.textContent = temple.templeName;
     card.append(name);
 
@@ -133,32 +133,31 @@ function showFilter(filterName) {
   const results = temples.filter(filter.matches);
   createTempleCards(results);
   document.querySelector("#filter-title").textContent = filter.title;
-  document.querySelector("#filter-description").textContent = filter.description;
   document.querySelector("#temple-count").textContent = `${results.length} temple${results.length === 1 ? "" : "s"} displayed`;
 
   navigationLinks.forEach(link => {
     if (link.dataset.filter === filterName) {
       link.setAttribute("aria-current", "page");
+      link.classList.add("active");
     } else {
       link.removeAttribute("aria-current");
+      link.classList.remove("active");
     }
   });
 }
 
 function closeMenu() {
-  navigation.classList.remove("open");
+  navigation.classList.remove("show");
+  menuButton.classList.remove("show");
   menuButton.setAttribute("aria-expanded", "false");
   menuButton.setAttribute("aria-label", "Open navigation menu");
-  menuButton.firstElementChild.textContent = "☰";
 }
 
-document.documentElement.classList.add("js");
-
 menuButton.addEventListener("click", () => {
-  const isOpen = navigation.classList.toggle("open");
+  const isOpen = navigation.classList.toggle("show");
   menuButton.setAttribute("aria-expanded", String(isOpen));
   menuButton.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
-  menuButton.firstElementChild.textContent = isOpen ? "✕" : "☰";
+  menuButton.classList.toggle("show", isOpen);
 });
 
 navigationLinks.forEach(link => {
@@ -166,7 +165,7 @@ navigationLinks.forEach(link => {
     event.preventDefault();
     showFilter(link.dataset.filter);
     // Move focus to the visible menu button when the mobile navigation closes.
-    if (window.matchMedia("(max-width: 899px)").matches) {
+    if (window.matchMedia("(max-width: 699px)").matches) {
       menuButton.focus();
     }
     closeMenu();
@@ -174,12 +173,12 @@ navigationLinks.forEach(link => {
 });
 
 document.addEventListener("keydown", event => {
-  if (event.key === "Escape" && navigation.classList.contains("open")) {
+  if (event.key === "Escape" && navigation.classList.contains("show")) {
     closeMenu();
     menuButton.focus();
   }
 });
 
 document.querySelector("#currentyear").textContent = new Date().getFullYear();
-document.querySelector("#lastModified").textContent = `Last Modification: ${document.lastModified}`;
+document.querySelector("#lastModified").textContent = document.lastModified;
 showFilter("home");

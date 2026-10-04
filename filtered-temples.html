@@ -1,46 +1,68 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore ten temples around the world. Filter this responsive temple album by dedication year or size and view temple locations, dates, and photos.">
-  <meta name="author" content="Kyla Gwen Papa">
-  <title>WDD 131 | Filtered Temple Album | Kyla Gwen Papa</title>
-  <link rel="stylesheet" href="styles/filtered-temples.css">
-  <link rel="stylesheet" href="styles/filtered-temples-large.css">
-  <script src="scripts/filtered-temples.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="author" content="Kyla Gwen Papa">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="WDD 131 – Dynamic Web Fundamentals temple album by Kyla Gwen Papa with ten temples, lazy-loaded photos, and filters by dedication year and size.">
+
+    <title>Filtered Temple Album | Kyla Gwen Papa</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&amp;family=Roboto:wght@400;500&amp;display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/filtered-temples.css">
+    <link rel="stylesheet" href="styles/filtered-temples-large.css">
+
+    <script src="scripts/filtered-temples.js" defer></script>
 </head>
+
 <body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  <header>
-    <div class="header-inner">
-      <span class="site-title">Temple Album</span>
-      <button id="menu-button" type="button" aria-label="Open navigation menu" aria-controls="temple-navigation" aria-expanded="false">
-        <span aria-hidden="true">☰</span>
-      </button>
-      <nav id="temple-navigation" aria-label="Temple filters">
-        <a id="home" href="#temple-gallery" data-filter="home" aria-current="page">Home</a>
-        <a id="old" href="#temple-gallery" data-filter="old">Old</a>
-        <a id="new" href="#temple-gallery" data-filter="new">New</a>
-        <a id="large" href="#temple-gallery" data-filter="large">Large</a>
-        <a id="small" href="#temple-gallery" data-filter="small">Small</a>
-      </nav>
-    </div>
-  </header>
-  <main id="main-content">
-    <div class="album-intro">
-      <p class="eyebrow">A collection from around the world</p>
-      <h1 id="filter-title">Home</h1>
-      <p id="filter-description">Explore all the temples in this album.</p>
-      <p id="temple-count" role="status" aria-live="polite" aria-atomic="true"></p>
-    </div>
-    <!-- JavaScript creates every temple card inside this empty container. -->
-    <div id="temple-gallery" class="temple-grid"></div>
-    <noscript><p>Please enable JavaScript to view the temple album and use its filters.</p></noscript>
-  </main>
-  <footer>
-    <p>© <span id="currentyear"></span> | Kyla Gwen Papa | Philippines</p>
-    <p id="lastModified"></p>
-  </footer>
+    <header>
+        <h1 id="course-title">Temple Album</h1>
+
+        <button id="menu" type="button" aria-label="Open navigation menu" aria-controls="temple-navigation"
+            aria-expanded="false"></button>
+
+        <nav aria-label="Temple filters">
+            <ul id="temple-navigation" class="navigation">
+                <li><a id="home" href="#temple-gallery" data-filter="home" class="active" aria-current="page">Home</a>
+                </li>
+                <li><a id="old" href="#temple-gallery" data-filter="old">Old</a></li>
+                <li><a id="new" href="#temple-gallery" data-filter="new">New</a></li>
+                <li><a id="large" href="#temple-gallery" data-filter="large">Large</a></li>
+                <li><a id="small" href="#temple-gallery" data-filter="small">Small</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 id="filter-title">Home</h2>
+        <p id="temple-count" role="status" aria-live="polite" aria-atomic="true"></p>
+
+        <div id="temple-gallery" class="temple-gallery"></div>
+        <noscript>
+            <p>Please enable JavaScript to view and filter this temple album.</p>
+        </noscript>
+    </main>
+
+    <footer>
+        <p>
+            &copy; <span id="currentyear"></span>
+            Kyla Gwen Papa | Philippines
+        </p>
+
+        <p>
+            Last Modified: <span id="lastModified"></span>
+        </p>
+    </footer>
 </body>
+
 </html>
