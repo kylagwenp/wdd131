@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Share a product review, rate your experience, and tell us which features you found useful.">
+  <meta name="author" content="Kyla Gwen Papa">
+  <title>Product Review Form | Kyla Gwen Papa</title>
+  <link rel="stylesheet" href="styles/form.css">
+  <script src="scripts/products.js" defer></script>
+  <script src="scripts/form.js" defer></script>
+  <script src="scripts/footer.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <p class="eyebrow">YOUR EXPERIENCE MATTERS</p>
+    <h1>Product Review</h1>
+    <p>Tell us what worked for you.</p>
+  </header>
+
+  <main>
+    <form class="review-form" method="get" action="review.html">
+      <p class="form-intro">Fields marked <span class="required">*</span> are required.</p>
+      <noscript><p>Please enable JavaScript to load the product options.</p></noscript>
+
+      <div class="form-field">
+        <label for="product-name">Product Name <span class="required" aria-hidden="true">*</span></label>
+        <select id="product-name" name="product" required>
+          <option value="" disabled selected>Select a Product ...</option>
+        </select>
+      </div>
+
+      <fieldset class="rating-field">
+        <legend>Overall Rating <span class="required" aria-hidden="true">*</span></legend>
+        <p class="field-hint" id="rating-hint">Choose a rating from 1 (poor) to 5 (excellent).</p>
+        <div class="rating-options">
+          <div class="rating-option">
+            <input type="radio" id="rating-1" name="rating" value="1" aria-describedby="rating-hint" required>
+            <label for="rating-1"><span class="star" aria-hidden="true">☆</span><span aria-hidden="true">1</span><span class="visually-hidden">1 star — poor</span></label>
+          </div>
+          <div class="rating-option">
+            <input type="radio" id="rating-2" name="rating" value="2" aria-describedby="rating-hint" required>
+            <label for="rating-2"><span class="star" aria-hidden="true">☆</span><span aria-hidden="true">2</span><span class="visually-hidden">2 stars — fair</span></label>
+          </div>
+          <div class="rating-option">
+            <input type="radio" id="rating-3" name="rating" value="3" aria-describedby="rating-hint" required>
+            <label for="rating-3"><span class="star" aria-hidden="true">☆</span><span aria-hidden="true">3</span><span class="visually-hidden">3 stars — good</span></label>
+          </div>
+          <div class="rating-option">
+            <input type="radio" id="rating-4" name="rating" value="4" aria-describedby="rating-hint" required>
+            <label for="rating-4"><span class="star" aria-hidden="true">☆</span><span aria-hidden="true">4</span><span class="visually-hidden">4 stars — very good</span></label>
+          </div>
+          <div class="rating-option">
+            <input type="radio" id="rating-5" name="rating" value="5" aria-describedby="rating-hint" required>
+            <label for="rating-5"><span class="star" aria-hidden="true">☆</span><span aria-hidden="true">5</span><span class="visually-hidden">5 stars — excellent</span></label>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="form-field">
+        <label for="installation-date">Date of Installation <span class="required" aria-hidden="true">*</span></label>
+        <input type="date" id="installation-date" name="installation-date" required>
+      </div>
+
+      <fieldset class="features-field">
+        <legend>Useful Features</legend>
+        <p class="field-hint">Which features did you find useful? Check all that apply.</p>
+        <div class="feature-options">
+          <div class="feature-option">
+            <input type="checkbox" id="feature-durability" name="features" value="durability">
+            <label for="feature-durability">Durability</label>
+          </div>
+          <div class="feature-option">
+            <input type="checkbox" id="feature-ease" name="features" value="ease-of-use">
+            <label for="feature-ease">Ease of Use</label>
+          </div>
+          <div class="feature-option">
+            <input type="checkbox" id="feature-performance" name="features" value="performance">
+            <label for="feature-performance">Performance</label>
+          </div>
+          <div class="feature-option">
+            <input type="checkbox" id="feature-design" name="features" value="design">
+            <label for="feature-design">Design</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="form-field">
+        <label for="written-review">Written Review <span class="optional">(optional)</span></label>
+        <textarea id="written-review" name="review" rows="5" placeholder="What did you like? What could be better?"></textarea>
+      </div>
+
+      <div class="form-field">
+        <label for="user-name">Your Name <span class="optional">(optional)</span></label>
+        <input type="text" id="user-name" name="user-name" autocomplete="name" placeholder="Enter your name">
+      </div>
+
+      <input class="submit-button" type="submit" value="Post Review">
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="currentyear"></span> | Kyla Gwen Papa | Philippines</p>
+    <p id="lastModified"></p>
+  </footer>
+</body>
+</html>
