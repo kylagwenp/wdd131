@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore six painting practice illustrations, filter acrylic and watercolor ideas, save favorite projects, and choose a future tutorial topic.">
+  <meta name="author" content="Kyla Gwen Papa">
+  <meta name="theme-color" content="#DCEEFF">
+  <title>The gallery | Kyla’s Blue Palette</title>
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles/creative.css">
+  <script src="scripts/paintings.js" defer></script><script src="scripts/creative.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a><header class="site-header">
+    <div class="header-wrap">
+      <a class="brand" href="index.html"><img src="images/logo.svg" alt="" width="52" height="52"><span>Kyla’s<span class="brand-second">blue palette</span></span></a>
+      <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="true" hidden>Menu</button>
+      <nav id="primary-navigation" aria-label="Main navigation"><a href="index.html">Home</a><a href="tutorials.html">Paint with me</a><a href="gallery.html" aria-current="page">The gallery</a><a class="saved-link" href="gallery.html?saved=1">Saved ideas <span data-favorite-count>0</span></a></nav>
+    </div>
+  </header>
+  <main id="main-content" class="content-width">
+    <div class="page-intro"><p class="eyebrow">The gallery</p><h1>Ideas for your<br><em>next blank page.</em></h1><p>A little collection of practice illustrations. Find a color mood you like, save an idea, and follow its lesson when you’re ready.</p></div>
+    <h2 class="visually-hidden">Painting collection</h2>
+    <div class="filter-row" id="gallery-controls" hidden><label for="medium-filter">Paint type<select id="medium-filter"><option value="all">All paint types</option><option value="acrylic">Acrylic</option><option value="watercolor">Watercolor</option></select></label><label for="level-filter">Comfort level<select id="level-filter"><option value="all">All levels</option><option value="Beginner">Beginner</option><option value="Next step">Next step</option></select></label><button class="filter-button" id="saved-filter" type="button" aria-pressed="false">Saved only</button><button class="reset-button" id="reset-filters" type="button">Reset filters</button></div>
+    <p class="results-count" id="gallery-count" role="status" aria-live="polite">6 painting ideas</p>
+    <div class="painting-grid" id="painting-gallery"><article class="painting-card" data-painting-id="evening-sky">
+      <a class="painting-image" href="tutorials.html#evening-sky"><img src="images/evening-sky.webp" alt="Illustration of a peach sunset above a navy hill with small grasses" width="900" height="680" loading="lazy"></a>
+      <div class="painting-info"><p class="mini-label">Acrylic · 30 minutes</p><h3><a href="tutorials.html#evening-sky">A small evening sky</a></h3><p>Blend a peach-colored horizon into a soft blue sky, then add a quiet silhouette.</p><div class="card-bottom"><span class="level">Beginner</span><button class="save-button" type="button" data-save="evening-sky" aria-pressed="false" aria-label="Save idea: A small evening sky" hidden>Save idea</button></div></div>
+    </article><article class="painting-card" data-painting-id="little-daisies">
+      <a class="painting-image" href="tutorials.html#little-daisies"><img src="images/little-daisies.webp" alt="Illustration of three white daisies with green stems on a pale blue background" width="900" height="680" loading="lazy"></a>
+      <div class="painting-info"><p class="mini-label">Acrylic · 35 minutes</p><h3><a href="tutorials.html#little-daisies">Little daisies in blue</a></h3><p>Practice simple petal strokes with a loose handful of white daisies and leafy stems.</p><div class="card-bottom"><span class="level">Beginner</span><button class="save-button" type="button" data-save="little-daisies" aria-pressed="false" aria-label="Save idea: Little daisies in blue" hidden>Save idea</button></div></div>
+    </article><article class="painting-card" data-painting-id="sea-and-shore">
+      <a class="painting-image" href="tutorials.html#sea-and-shore"><img src="images/sea-and-shore.webp" alt="Illustration of turquoise sea meeting a warm sandy shore with white foam" width="900" height="680" loading="lazy"></a>
+      <div class="painting-info"><p class="mini-label">Acrylic · 45 minutes</p><h3><a href="tutorials.html#sea-and-shore">Sea, shore, and a slow afternoon</a></h3><p>Build a coastal scene with a straight horizon and a few broken lines of sea foam.</p><div class="card-bottom"><span class="level">Next step</span><button class="save-button" type="button" data-save="sea-and-shore" aria-pressed="false" aria-label="Save idea: Sea, shore, and a slow afternoon" hidden>Save idea</button></div></div>
+    </article><article class="painting-card" data-painting-id="misty-hills">
+      <a class="painting-image" href="tutorials.html#misty-hills"><img src="images/misty-hills.webp" alt="Watercolor-style illustration of layered blue hills separated by pale mist" width="900" height="680" loading="lazy"></a>
+      <div class="painting-info"><p class="mini-label">Watercolor · 30 minutes</p><h3><a href="tutorials.html#misty-hills">Misty blue hills</a></h3><p>Explore light washes and layered hills, leaving a little white paper between them.</p><div class="card-bottom"><span class="level">Beginner</span><button class="save-button" type="button" data-save="misty-hills" aria-pressed="false" aria-label="Save idea: Misty blue hills" hidden>Save idea</button></div></div>
+    </article><article class="painting-card" data-painting-id="leaf-study">
+      <a class="painting-image" href="tutorials.html#leaf-study"><img src="images/leaf-study.webp" alt="Watercolor-style illustration of loose green leaves on curved stems" width="900" height="680" loading="lazy"></a>
+      <div class="painting-info"><p class="mini-label">Watercolor · 20 minutes</p><h3><a href="tutorials.html#leaf-study">A page of little leaves</a></h3><p>Learn a press-and-lift brushstroke through a small botanical study in soft greens.</p><div class="card-bottom"><span class="level">Beginner</span><button class="save-button" type="button" data-save="leaf-study" aria-pressed="false" aria-label="Save idea: A page of little leaves" hidden>Save idea</button></div></div>
+    </article><article class="painting-card" data-painting-id="rainy-window">
+      <a class="painting-image" href="tutorials.html#rainy-window"><img src="images/rainy-window.webp" alt="Watercolor-style illustration of a blue rainy view through a window" width="900" height="680" loading="lazy"></a>
+      <div class="painting-info"><p class="mini-label">Watercolor · 40 minutes</p><h3><a href="tutorials.html#rainy-window">Rain at the window</a></h3><p>Use a gentle wet-on-wet wash and thin lines to suggest a rainy afternoon indoors.</p><div class="card-bottom"><span class="level">Next step</span><button class="save-button" type="button" data-save="rainy-window" aria-pressed="false" aria-label="Save idea: Rain at the window" hidden>Save idea</button></div></div>
+    </article></div>
+    <p class="storage-note" id="storage-message" role="status" hidden></p>
+    <noscript><p class="storage-note">JavaScript is off. You can still browse every painting and open the lessons. Turn it on to filter ideas, save favorites, and use the practice form.</p></noscript>
+    <section class="request-section" aria-labelledby="request-heading"><div class="request-copy"><p class="eyebrow">What would you like to try?</p><h2 id="request-heading">Plan your<br>next painting.</h2><p>A flower you’ve never painted? A little landscape? Write down the tutorial you’d like to try next.</p><p class="form-note">This is a practice request form. It shows a confirmation and remembers your submission count on this device; it doesn’t send an email.</p></div>
+      <form id="tutorial-request" action="gallery.html#request-heading" method="post"><p id="form-unavailable">Enable JavaScript to use this practice form.</p><fieldset id="request-fields" disabled><legend>Your tutorial idea</legend><div class="form-pair"><label for="visitor-name">Your name <span class="required-note">(required)</span><input id="visitor-name" name="visitorName" type="text" autocomplete="given-name" maxlength="60" required></label><label for="visitor-email">Email <span class="required-note">(required)</span><input id="visitor-email" name="visitorEmail" type="email" autocomplete="email" maxlength="120" required></label></div><label for="requested-medium">Paint type <span class="required-note">(required)</span><select id="requested-medium" name="requestedMedium" required><option value="" disabled selected>Choose a paint type</option><option value="acrylic">Acrylic</option><option value="watercolor">Watercolor</option><option value="either">Either — I’m exploring</option></select></label><label for="request-message">What would you like to paint? <span class="required-note">(required)</span><textarea id="request-message" name="requestMessage" rows="4" minlength="10" maxlength="600" aria-describedby="message-help" required></textarea></label><p class="field-help" id="message-help">Use 10–600 characters. Try naming a subject or technique.</p><button class="button" type="submit">Save my painting plan <span aria-hidden="true">↗</span></button></fieldset><div class="form-confirmation" id="request-confirmation" role="status" aria-live="polite" tabindex="-1" hidden></div></form>
+    </section>
+  </main><footer class="site-footer"><div class="footer-wrap"><div><p class="footer-brand">Kyla’s Blue Palette</p><p>A little practice. A little patience. A little paint.</p></div><div><p>© <span id="current-year">2026</span> Kyla Gwen Papa</p><p><a href="references.html">References &amp; credits</a> · <a href="siteplan.html">Site plan</a></p></div></div></footer>
+</body>
+</html>
